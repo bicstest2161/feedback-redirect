@@ -22,22 +22,39 @@
     window.onload = sendFeedback;
   </script>
   <style>
-    body {
-      text-align: center;
-      padding-top: 50px;
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: Arial, sans-serif;
+      background-color: #ffffff;
     }
-    .loader {
-      margin-bottom: 20px;
+
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      z-index: 9999;
     }
+
+    #loading-screen img {
+      max-width: 45%;
+      width: 100%;
+      height: auto;
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
-  <div class="loader">
-    <img src="Image/loading-loader.gif" alt="Loading...">
+  <div id="loading-screen">
+    <img src="Image/loading-loader.gif" alt="Loading..." />
   </div>
-  <p>Submitting your feedback, please wait...</p>
 </body>
 </html>
-
-
