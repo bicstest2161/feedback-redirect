@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submitting Feedback...</title>
+  <script>
+    async function sendFeedback() {
+      const params = new URLSearchParams(window.location.search);
+      const rating = params.get('rating');
+      const id = params.get('id');
+
+      const zapierURL = `https://hooks.zapier.com/hooks/catch/24114315/u6a8o16/?id=${id}&rating=${rating}`;
+
+      try {
+        await fetch(zapierURL); // Send to Zapier
+        window.location.href = "https://bicstest2161.github.io/thankyou-page/thankyou.html"; // Redirect
+      } catch (e) {
+        alert("Something went wrong.");
+      }
+    }
+
+    window.onload = sendFeedback;
+  </script>
+</head>
+<body>
+  <p>Submitting your feedback, please wait...</p>
+</body>
+</html>
